@@ -13,9 +13,10 @@
 
                  [prismatic/dommy "0.1.1"]
 
-                 [org.clojure/clojurescript "0.0-1913"]]
+                 [org.clojure/clojurescript "0.0-1913"]
+                 [org.clojure/tools.reader "0.7.8"]]
 
-  :plugins [[jarohen/lein-frodo "0.1.2"]
+  :plugins [[jarohen/lein-frodo "0.2.0"]
             [lein-cljsbuild "0.3.3"]
             [lein-pdo "0.1.1"]]
 
