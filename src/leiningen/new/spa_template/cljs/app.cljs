@@ -1,6 +1,7 @@
 (ns {{name}}.cljs.app
     (:require [clojure.string :as s]
-              [{{name}}.cljs.home :as home])
+              [{{name}}.cljs.home :as home]
+              clojure.browser.repl)
     (:require-macros [dommy.macros :refer [sel sel1]]))
 
 (def default-hash "#/")
