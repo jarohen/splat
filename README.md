@@ -1,10 +1,10 @@
-# Single Page Application Template
+# Single Page Light-weight Application Template (SPLAT)
 
 A Leiningen template to create ClojureScript single page web applications.
 
 ## Usage
 
-    lein new spa-template {{project-name}}
+    lein new splat {{project-name}}
 
 To run the project, run `lein dev`.
 

@@ -1,9 +1,9 @@
-(ns leiningen.new.spa-template
+(ns leiningen.new.splat
   (:use [leiningen.new.templates :only [renderer name-to-path ->files]]))
 
-(def render (renderer "spa-template"))
+(def render (renderer "splat"))
 
-(defn spa-template
+(defn splat
   "Create a new CLJS Single Page Application"
   [name]
   (println "Creating a new CLJS Single Page Application...")
