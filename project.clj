@@ -1,4 +1,4 @@
-(defproject splat/lein-template "0.1.8"
+(defproject splat/lein-template "0.1.9"
   :description "A Leiningen template to create ClojureScript single page web applications."
   :url "https://github.com/james-henderson/splat"
   :license {:name "Eclipse Public License"
