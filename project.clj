@@ -1,4 +1,4 @@
-(defproject spa-template/lein-template "0.1.3"
+(defproject spa-template/lein-template "0.1.4"
   :description "A Leiningen template to create ClojureScript single page web applications."
   :url "https://github.com/james-henderson/cljs-spa-template"
   :license {:name "Eclipse Public License"
