@@ -6,9 +6,9 @@
 
 (def default-hash "#/")
 
-(defn- bind-hash [hash-atom]
+(defn- bind-hash [!hash]
   (letfn [(on-hash-change []
-            (reset! hash-atom (.-hash js/location)))]
+            (reset! !hash (.-hash js/location)))]
     
     (set! (.-onhashchange js/window) on-hash-change)
     
@@ -19,8 +19,8 @@
 
 (set! (.-onload js/window)
       (fn []
-        (let [hash-atom (atom nil)]
-          (home/watch-hash! hash-atom)
-          (bind-hash hash-atom))))
+        (let [!hash (atom nil)]
+          (home/watch-hash! !hash)
+          (bind-hash !hash))))
 
 
