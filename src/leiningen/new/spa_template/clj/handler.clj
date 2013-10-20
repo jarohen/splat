@@ -4,7 +4,7 @@
             [compojure.route :refer [resources]]
             [compojure.handler :refer [api]]
             [hiccup.page :refer [html5 include-css include-js]]
-            cemerick.austin.repls))
+            [frodo :refer [repl-connect-js]]))
 
 (defn page-frame []
   (html5
@@ -18,7 +18,7 @@
    [:body
     [:div.container
      [:div#content]
-     [:script (cemerick.austin.repls/browser-connected-repl-js)]]]))
+     [:script (repl-connect-js)]]]))
 
 (defroutes app-routes
   (GET "/" [] (response (page-frame)))
