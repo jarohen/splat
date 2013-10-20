@@ -13,10 +13,11 @@
 
                  [prismatic/dommy "0.1.1"]
 
+                 [org.clojure/core.async "0.1.242.0-44b1e3-alpha"]
                  [org.clojure/clojurescript "0.0-1913"]
                  [org.clojure/tools.reader "0.7.8"]]
 
-  :plugins [[jarohen/lein-frodo "0.2.0"]
+  :plugins [[jarohen/lein-frodo "0.2.1"]
             [lein-cljsbuild "0.3.3"]
             [lein-pdo "0.1.1"]]
 
@@ -33,5 +34,3 @@
 
   :aliases {"dev" ["pdo" "cljsbuild" "auto," "frodo"]
             "start" ["do" "cljsbuild" "once," "trampoline" "frodo"]})
-
-
