@@ -14,11 +14,11 @@
                  [prismatic/dommy "0.1.1"]
 
                  [org.clojure/core.async "0.1.242.0-44b1e3-alpha"]
-                 [org.clojure/clojurescript "0.0-2014"]
-                 [org.clojure/tools.reader "0.7.10"]]
+                 [org.clojure/clojurescript "0.0-2080"]
+                 [org.clojure/tools.reader "0.8.0"]]
 
   :plugins [[jarohen/lein-frodo "0.2.3"]
-            [lein-cljsbuild "1.0.0-alpha2"]
+            [lein-cljsbuild "1.0.0"]
             [lein-pdo "0.1.1"]]
 
   :frodo/config-resource "{{name}}-config.edn"
@@ -29,8 +29,10 @@
 
   :cljsbuild {:builds [{:source-paths ["src/cljs"]
                         :compiler {:output-to "target/resources/js/{{name}}.js"
+                                   :output-dir "target/resources/js/"
                                    :optimizations :whitespace
-                                   :pretty-print true}}]}
+                                   :pretty-print true
+                                   :source-map "target/resources/js/{{name}}.js.map"}}]}
 
   :aliases {"dev" ["pdo" "cljsbuild" "auto," "frodo"]
             "start" ["do" "cljsbuild" "once," "trampoline" "frodo"]})
