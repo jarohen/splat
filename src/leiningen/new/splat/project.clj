@@ -32,7 +32,14 @@
                                    :output-dir "target/resources/js/"
                                    :optimizations :whitespace
                                    :pretty-print true
-                                   :source-map "target/resources/js/{{name}}.js.map"}}]}
+                                   :source-map "target/resources/js/{{name}}.js.map"}}
+
+                       {:source-paths ["src/cljs"]
+                        :id "prod"
+                        :compiler {:output-to "target/resources/js/{{name}}.js"
+                                   :optimizations :advanced
+                                   :pretty-print false
+                                   :externs ["externs/jquery.js"]}}]}
 
   :aliases {"dev" ["pdo" "cljsbuild" "auto," "frodo"]
-            "start" ["do" "cljsbuild" "once," "trampoline" "frodo"]})
+            "start" ["do" "cljsbuild" "once" "prod," "trampoline" "frodo"]})
