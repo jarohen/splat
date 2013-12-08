@@ -1,5 +1,5 @@
 (ns leiningen.new.splat
-  (:use [leiningen.new.templates :only [renderer name-to-path ->files]]))
+  (:require [leiningen.new.templates :refer [renderer name-to-path ->files]]))
 
 (def render (renderer "splat"))
 
@@ -12,7 +12,10 @@
     (->files data
              ["project.clj" (render "project.clj" data)]
              [".gitignore" (render "gitignore" data)]
-             ["target/resources/js/.ph" ""]
+             ["target/resources/js/.ph" (render "ph")]
+             ["target/generated/clj/.ph" (render "ph")]
+             ["target/generated/cljs/.ph" (render "ph")]
+             ["src/cljx/.ph" (render "ph")]
              ["resources/{{name}}-config.edn" (render "resources/config.edn" data)]
              
              ["src/clojure/{{sanitized}}/handler.clj" (render "clj/handler.clj" data)]
