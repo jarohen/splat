@@ -16,9 +16,8 @@
 
     (include-js "/js/{{name}}.js")]
    [:body
-    [:div.container
-     [:div#content]
-     [:script (repl-connect-js)]]]))
+    [:div#content]
+    [:script (repl-connect-js)]]))
 
 (defroutes app-routes
   (GET "/" [] (response (page-frame)))
