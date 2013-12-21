@@ -13,12 +13,12 @@
 
                  [prismatic/dommy "0.1.1"]
 
-                 [org.clojure/core.async "0.1.242.0-44b1e3-alpha"]
-                 [org.clojure/clojurescript "0.0-2080"]
+                 [org.clojure/core.async "0.1.267.0-0d7780-alpha"]
+                 [org.clojure/clojurescript "0.0-2127"]
                  [org.clojure/tools.reader "0.8.0"]]
 
-  :plugins [[jarohen/lein-frodo "0.2.5"]
-            [lein-cljsbuild "1.0.0"]
+  :plugins [[jarohen/lein-frodo "0.2.9"]
+            [lein-cljsbuild "1.0.1"]
             [lein-pdo "0.1.1"]
             [com.keminglabs/cljx "0.3.1"]]
 
