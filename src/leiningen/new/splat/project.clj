@@ -15,9 +15,9 @@
 
                  [org.clojure/core.async "0.1.267.0-0d7780-alpha"]
                  [org.clojure/clojurescript "0.0-2127"]
-                 [org.clojure/tools.reader "0.8.0"]]
+                 [org.clojure/tools.reader "0.8.1"]]
 
-  :plugins [[jarohen/lein-frodo "0.2.9"]
+  :plugins [[jarohen/lein-frodo "0.2.10"]
             [lein-cljsbuild "1.0.1"]
             [lein-pdo "0.1.1"]
             [com.keminglabs/cljx "0.3.1"]]
