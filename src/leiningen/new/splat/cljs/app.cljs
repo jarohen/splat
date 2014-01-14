@@ -4,6 +4,8 @@
               clojure.browser.repl)
     (:require-macros [dommy.macros :refer [sel sel1]]))
 
+(enable-console-print!)
+
 (def default-hash "#/")
 
 (defn- bind-hash [!hash]
