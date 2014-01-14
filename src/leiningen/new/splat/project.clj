@@ -38,7 +38,8 @@
                    :output-path "target/generated/cljs"
                    :rules :cljs}]}
 
-  :cljsbuild {:builds [{:source-paths ["src/cljs" "target/generated/cljs"]
+  :cljsbuild {:builds {:dev
+                       {:source-paths ["src/cljs" "target/generated/cljs"]
                         :compiler {:output-to "target/resources/js/{{name}}.js"
                                    :output-dir "target/resources/js/"
                                    :optimizations :whitespace
@@ -48,12 +49,12 @@
                                         ; :source-map "target/resources/js/{{name}}.js.map"
                                    }}
 
+                       :prod
                        {:source-paths ["src/cljs" "target/generated/cljs"]
-                        :id "prod"
                         :compiler {:output-to "target/resources/js/{{name}}.js"
                                    :optimizations :advanced
                                    :pretty-print false
-                                   :externs ["externs/jquery.js"]}}]}
+                                   :externs ["externs/jquery.js"]}}}}
 
-  :aliases {"dev" ["pdo" "cljx" "auto," "cljsbuild" "auto," "frodo"]
+  :aliases {"dev" ["pdo" "cljx" "auto," "cljsbuild" "auto" "dev," "frodo"]
             "start" ["do" "cljx" "once," "cljsbuild" "once" "prod," "trampoline" "frodo"]})
