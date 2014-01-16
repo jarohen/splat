@@ -20,7 +20,7 @@
                  [jarohen/frodo-core "0.2.10"]]
 
   :plugins [[jarohen/lein-frodo "0.2.10"]
-            [lein-cljsbuild "1.0.1"]
+            [lein-cljsbuild "1.0.0"]
             [lein-pdo "0.1.1"]
             [com.keminglabs/cljx "0.3.1"]]
 
