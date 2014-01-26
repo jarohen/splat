@@ -1,28 +1,15 @@
 (ns {{name}}.cljs.app
-    (:require [clojure.string :as s]
-              [{{name}}.cljs.home :as home]
+    (:require [{{name}}.cljs.home :as home]
               clojure.browser.repl)
-    (:require-macros [dommy.macros :refer [sel sel1]]))
+    (:require-macros [dommy.macros :refer [node sel1]]))
 
 (enable-console-print!)
 
-(def default-hash "#/")
-
-(defn- bind-hash [!hash]
-  (letfn [(on-hash-change []
-            (reset! !hash (.-hash js/location)))]
-    
-    (set! (.-onhashchange js/window) on-hash-change)
-    
-    (when (s/blank? (.-hash js/location))
-      (set! (.-hash js/location) default-hash))
-    
-    (on-hash-change)))
-
 (set! (.-onload js/window)
       (fn []
-        (let [!hash (atom nil)]
-          (home/watch-hash! !hash)
-          (bind-hash !hash))))
+        (d/replace-contents! (sel1 :#content)
+                             (node [:div.container
+                                    [:h2 {:style {:margin-top :1em}}
+                                     "Hello world from ClojureScript!"]]))))
 
 
