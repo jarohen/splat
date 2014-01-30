@@ -1,4 +1,14 @@
-/target
+/target/*
+!/target/generated
+!/target/resources
+/target/generated/*
+/target/resources/*
+!/target/generated/clj
+!/target/generated/cljs
+!/target/generated/clj/.ph
+!/target/generated/cljs/.ph
+!/target/resources/.ph
+
 /lib
 /classes
 /checkouts
@@ -11,6 +21,5 @@ pom.xml.asc
 .lein-plugins
 .lein-repl-history
 .nrepl-port
-.ph
 /out/
 /.repl/

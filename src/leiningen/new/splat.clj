@@ -11,12 +11,17 @@
               :sanitized (name-to-path name)}]
     (->files data
              ["project.clj" (render "project.clj" data)]
-             ["Makefile" (render "Makefile" data)]
              [".gitignore" (render "gitignore" data)]
+             ["target/resources/.ph" (render "ph")]
+             ["target/generated/clj/.ph" (render "ph")]
+             ["target/generated/cljs/.ph" (render "ph")]
+             ["src/cljx/.ph" (render "ph")]
              ["resources/{{name}}-config.edn" (render "resources/config.edn" data)]
              
              ["src/clojure/{{sanitized}}/handler.clj" (render "clj/handler.clj" data)]
              ["src/cljs/{{sanitized}}/cljs/app.cljs" (render "cljs/app.cljs" data)]
              ["externs/jquery.js" (render "externs/jquery.js")]))
   (println "Created!")
-  (println "You can run the application with `make dev`"))
+  (println (str "I'd advise running `git add target` (when you've set up Git) due to Java classpath nuances "
+                "- see https://github.com/james-henderson/splat/Why-do-I-need-to-add-target.org for more details"))
+  (println "You can run the application with `lein dev`"))
