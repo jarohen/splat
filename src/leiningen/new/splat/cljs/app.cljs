@@ -1,5 +1,6 @@
 (ns {{name}}.cljs.app
-  (:require clojure.browser.repl)
+  (:require [dommy.core :as d]
+            clojure.browser.repl)
   (:require-macros [dommy.macros :refer [node sel1]]))
 
 (enable-console-print!)
