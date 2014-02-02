@@ -22,7 +22,8 @@
   :plugins [[jarohen/lein-frodo "0.2.10"]
             [lein-cljsbuild "1.0.0"]
             [lein-pdo "0.1.1"]
-            [com.keminglabs/cljx "0.3.1"]]
+            [com.keminglabs/cljx "0.3.1"]
+            [lein-shell "0.4.0"]]
 
   :frodo/config-resource "{{name}}-config.edn"
 
@@ -56,5 +57,18 @@
                                    :pretty-print false
                                    :externs ["externs/jquery.js"]}}}}
 
-  :aliases {"dev" ["pdo" "cljx" "auto," "cljsbuild" "auto" "dev," "frodo"]
-            "start" ["do" "cljx" "once," "cljsbuild" "once" "prod," "trampoline" "frodo"]})
+  :aliases {"dev" ["do"
+                   ["shell" "mkdir" "-p"
+                    "target/generated/clj"
+                    "target/generated/cljs"
+                    "target/resources"]
+                   ["cljx" "once"]
+                   ["pdo"
+                    ["cljx" "auto"]
+                    ["cljsbuild" "auto" "dev"]
+                    "frodo"]]
+            
+            "start" ["do"
+                     ["cljx" "once"]
+                     ["cljsbuild" "once" "prod"]
+                     ["trampoline" "frodo"]]})
