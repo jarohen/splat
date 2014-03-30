@@ -5,7 +5,7 @@
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   
-  :dependencies [[org.clojure/clojure "1.5.1"]
+  :dependencies [[org.clojure/clojure "1.6.0"]
 
                  [ring/ring-core "1.2.0"]
                  [compojure "1.1.6"]
@@ -13,13 +13,13 @@
 
                  [prismatic/dommy "0.1.2"]
 
-                 [org.clojure/core.async "0.1.267.0-0d7780-alpha"]
-                 [org.clojure/clojurescript "0.0-2156"]
+                 [org.clojure/core.async "0.1.278.0-76b25b-alpha"]
+                 [org.clojure/clojurescript "0.0-2197"]
                  [org.clojure/tools.reader "0.8.3"]
 
-                 [jarohen/frodo-core "0.2.11"]]
+                 [jarohen/frodo-core "0.3.0-rc1"]]
 
-  :plugins [[jarohen/lein-frodo "0.2.11"]
+  :plugins [[jarohen/lein-frodo "0.3.0-rc1"]
             [lein-cljsbuild "1.0.2"]
             [lein-pdo "0.1.1"]
             [com.keminglabs/cljx "0.3.2"]
