@@ -18,9 +18,6 @@
              ["src/clojure/{{sanitized}}/handler.clj" (render "clj/handler.clj" data)]
              ["src/cljs/{{sanitized}}/cljs/app.cljs" (render "cljs/app.cljs" data)]
              ["externs/jquery.js" (render "externs/jquery.js")]
-             "target/resources"
-             "target/generated/clj"
-             "target/generated/cljs"
-             "src/cljx/{{name}}/cljx"))
+             "src/cljx"))
   (println "Created!")
-  (println "You can run the application with `lein dev`"))
+  (println "To start the application, run `lein dev`, and then go to http://localhost:3000"))
