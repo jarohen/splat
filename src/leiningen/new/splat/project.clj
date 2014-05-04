@@ -13,9 +13,8 @@
 
                  [prismatic/dommy "0.1.2"]
 
-                 [org.clojure/clojurescript "0.0-2197"]
-                 [org.clojure/core.async "0.1.278.0-76b25b-alpha"]
-                 [org.clojure/tools.reader "0.8.3"]]
+                 [org.clojure/clojurescript "0.0-2202"]
+                 [org.clojure/core.async "0.1.278.0-76b25b-alpha"]]
 
   :plugins [[jarohen/lein-frodo "0.3.0-rc2"]
             [lein-cljsbuild "1.0.3"]
@@ -25,20 +24,20 @@
 
   :frodo/config-resource "{{name}}-config.edn"
 
-  :source-paths ["src/clojure" "target/generated/clj"]
+  :source-paths ["src" "target/generated/clj"]
 
   :resource-paths ["resources" "target/resources"]
 
-  :cljx {:builds [{:source-paths ["src/cljx"]
+  :cljx {:builds [{:source-paths ["src"]
                    :output-path "target/generated/clj"
                    :rules :clj}
 
-                  {:source-paths ["src/cljx"]
+                  {:source-paths ["src"]
                    :output-path "target/generated/cljs"
                    :rules :cljs}]}
 
   :cljsbuild {:builds {:dev
-                       {:source-paths ["src/cljs" "target/generated/cljs"]
+                       {:source-paths ["src" "target/generated/cljs"]
                         :compiler {:output-to "target/resources/js/{{name}}.js"
                                    :output-dir "target/resources/js/"
                                    :optimizations :whitespace
@@ -49,7 +48,7 @@
                                    }}
 
                        :prod
-                       {:source-paths ["src/cljs" "target/generated/cljs"]
+                       {:source-paths ["src" "target/generated/cljs"]
                         :compiler {:output-to "target/resources/js/{{name}}.js"
                                    :optimizations :advanced
                                    :pretty-print false
