@@ -5,7 +5,7 @@
             [compojure.handler :refer [api]]
             [hiccup.page :refer [html5 include-css include-js]]
             [frodo.web :refer [App]]
-            [frodo.brepl :refer [brepl-js]]))
+            [simple-brepl.service :refer [brepl-js]]))
 
 (defn page-frame []
   (html5
