@@ -15,8 +15,8 @@
              [".gitignore" (render "gitignore" data)]
              ["resources/{{name}}-config.edn" (render "resources/config.edn" data)]
              
-             ["src/{{sanitized}}/clj/handler.clj" (render "clj/handler.clj" data)]
-             ["src/{{sanitized}}/cljs/app.cljs" (render "cljs/app.cljs" data)]
+             ["src/{{sanitized}}/service/handler.clj" (render "clj/handler.clj" data)]
+             ["src/{{sanitized}}/ui/app.cljs" (render "cljs/app.cljs" data)]
              ["externs/jquery.js" (render "externs/jquery.js")]))
   (println "Created!")
   (println "To start the application, run `lein dev`, and then go to http://localhost:3000"))

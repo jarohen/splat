@@ -1,4 +1,4 @@
-(ns {{name}}.clj.handler
+(ns {{name}}.service.handler
   (:require [ring.util.response :refer [response]]
             [compojure.core :refer [routes GET]]
             [compojure.route :refer [resources]]

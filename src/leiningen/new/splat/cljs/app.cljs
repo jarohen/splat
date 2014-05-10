@@ -1,4 +1,4 @@
-(ns {{name}}.cljs.app
+(ns {{name}}.ui.app
   (:require [dommy.core :as d]
             [clojure.string :as s]
             simple-brepl.client)
