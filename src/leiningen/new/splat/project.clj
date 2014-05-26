@@ -20,7 +20,7 @@
                  [com.cemerick/piggieback "0.1.3"]
                  [com.keminglabs/cljx "0.3.2" :exclusions [com.cemerick/piggieback]]]
 
-  :plugins [[jarohen/lein-frodo "0.3.0-rc3"]
+  :plugins [[jarohen/lein-frodo "0.3.0"]
             [jarohen/simple-brepl "0.1.0"]
             [lein-cljsbuild "1.0.3"]
             [lein-pdo "0.1.1"]
