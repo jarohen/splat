@@ -16,7 +16,8 @@
              ["resources/{{name}}-config.edn" (render "resources/config.edn" data)]
              
              ["src/{{sanitized}}/service/handler.clj" (render "clj/handler.clj" data)]
-             ["src/{{sanitized}}/ui/app.cljs" (render "cljs/app.cljs" data)]
-             ["externs/jquery.js" (render "externs/jquery.js")]))
+             ["ui-src/{{sanitized}}/ui/app.cljs" (render "cljs/app.cljs" data)]
+             ["externs/jquery.js" (render "externs/jquery.js")]
+             "common-src"))
   (println "Created!")
   (println "To start the application, run `lein dev`, and then go to http://localhost:3000"))

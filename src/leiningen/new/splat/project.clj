@@ -13,23 +13,16 @@
 
                  [prismatic/dommy "0.1.2"]
 
-                 [org.clojure/clojurescript "0.0-2202"]
-                 [org.clojure/core.async "0.1.278.0-76b25b-alpha"]
-
-                 ;; TODO temporary until CLJX doesn't insist on piggieback 0.1.0
-                 [com.cemerick/piggieback "0.1.3"]
-                 [com.keminglabs/cljx "0.3.2" :exclusions [com.cemerick/piggieback]]]
+                 [org.clojure/clojurescript "0.0-2234"]
+                 [org.clojure/core.async "0.1.303.0-886421-alpha"]]
 
   :plugins [[jarohen/lein-frodo "0.3.0"]
             [jarohen/simple-brepl "0.1.0"]
             [lein-cljsbuild "1.0.3"]
             [lein-pdo "0.1.1"]
 
-            [com.keminglabs/cljx "0.3.2" :middleware false]
+            [com.keminglabs/cljx "0.4.0"]
             [lein-shell "0.4.0"]]
-
-  ;; TODO temporary until CLJX doesn't insist on piggieback 0.1.0
-  :repl-options {:nrepl-middleware [cljx.repl-middleware/wrap-cljx cemerick.piggieback/wrap-cljs-repl]}
 
   :frodo/config-resource "{{name}}-config.edn"
 
@@ -37,16 +30,16 @@
 
   :resource-paths ["resources" "target/resources"]
 
-  :cljx {:builds [{:source-paths ["src"]
+  :cljx {:builds [{:source-paths ["common-src"]
                    :output-path "target/generated/clj"
                    :rules :clj}
 
-                  {:source-paths ["src"]
+                  {:source-paths ["common-src"]
                    :output-path "target/generated/cljs"
                    :rules :cljs}]}
 
   :cljsbuild {:builds {:dev
-                       {:source-paths ["src" "target/generated/cljs"]
+                       {:source-paths ["ui-src" "target/generated/cljs"]
                         :compiler {:output-to "target/resources/js/{{name}}.js"
                                    :output-dir "target/resources/js/"
                                    :optimizations :whitespace
@@ -57,7 +50,7 @@
                                    }}
 
                        :prod
-                       {:source-paths ["src" "target/generated/cljs"]
+                       {:source-paths ["ui-src" "target/generated/cljs"]
                         :compiler {:output-to "target/resources/js/{{name}}.js"
                                    :optimizations :advanced
                                    :pretty-print false
