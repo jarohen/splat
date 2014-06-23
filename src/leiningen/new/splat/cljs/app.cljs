@@ -28,14 +28,14 @@
                                       [:ul
                                        [:li (code "(js/alert \"Hello world!\")")]
                                        [:li (code "(set! (.-backgroundColor js/document.body.style) \"green\")")]
-                                       [:li (code (s/join "\n" ["(in-ns '{{name}}.cljs.app)"
+                                       [:li (code (s/join "\n" ["(in-ns '{{name}}.ui.app)"
                                                                 "(d/replace-contents! (sel1 :#sample-div) (node [:strong \"Hi!\"]))"]))]]
 
                                       [:p "Run " (code ":cljs/quit") " to get back to a Clojure REPL."]]
                                      [:li [:p "Start making your webapp!"]
                                       [:ul
-                                       [:li [:p "The CLJS entry point is in " (code "src/cljs/{{sanitized}}/cljs/app.cljs")]]
-                                       [:li [:p "The Clojure Ring handler is in " (code "src/clojure/{{sanitized}}/handler.clj")]]]]
+                                       [:li [:p "The CLJS entry point is in " (code "ui-src/{{sanitized}}/ui/app.cljs")]]
+                                       [:li [:p "The Clojure Ring handler is in " (code "src/{{sanitized}}/service/handler.clj")]]]]
 
                                      [:li [:p "Any trouble, let me know - either through GitHub or on Twitter at " [:a {:href "https://twitter.com/jarohen"} "@jarohen"]]]
 
