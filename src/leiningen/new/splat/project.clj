@@ -16,8 +16,8 @@
                  [org.clojure/clojurescript "0.0-2234"]
                  [org.clojure/core.async "0.1.303.0-886421-alpha"]]
 
-  :plugins [[jarohen/lein-frodo "0.3.0"]
-            [jarohen/simple-brepl "0.1.0"]
+  :plugins [[jarohen/lein-frodo "0.3.2"]
+            [jarohen/simple-brepl "0.1.1"]
             [lein-cljsbuild "1.0.3"]
             [lein-pdo "0.1.1"]
 
