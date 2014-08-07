@@ -11,16 +11,15 @@
                  [compojure "1.1.6"]
                  [hiccup "1.0.5"]
 
-                 [prismatic/dommy "0.1.2"]
+                 [jarohen/flow "0.2.0-alpha5"]
 
-                 [org.clojure/clojurescript "0.0-2234"]
+                 [org.clojure/clojurescript "0.0-2280"]
                  [org.clojure/core.async "0.1.303.0-886421-alpha"]]
 
   :plugins [[jarohen/lein-frodo "0.3.2"]
             [jarohen/simple-brepl "0.1.1"]
             [lein-cljsbuild "1.0.3"]
             [lein-pdo "0.1.1"]
-
             [com.keminglabs/cljx "0.4.0"]
             [lein-shell "0.4.0"]]
 
