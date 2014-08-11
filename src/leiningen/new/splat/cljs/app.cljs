@@ -28,10 +28,9 @@
                [:p "I recommend:"]
                     
                [:ul
+                [:li (code "(+ 1 1)")]
                 [:li (code "(js/alert \"Hello world!\")")]
-                [:li (code "(set! (.-backgroundColor js/document.body.style) \"green\")")]
-                [:li (code (s/join "\n" ["(in-ns '{{name}}.ui.app)"
-                                         "(d/replace-contents! (sel1 :#sample-div) (node [:strong \"Hi!\"]))"]))]]
+                [:li (code "(set! (.-backgroundColor js/document.body.style) \"green\")")]]
 
                [:p "Run " (code ":cljs/quit") " to get back to a Clojure REPL."]]
               [:li [:p "Start making your webapp!"]
@@ -50,9 +49,6 @@
                [:br]
                "Twitter: " [:a {:href "https://twitter.com/jarohen"} "@jarohen"]
                [:br]
-               "GitHub: " [:a {:href "https://github.com/james-henderson"} "james-henderson"]]]
-
-                  
-             [:div#sample-div]]))))
+               "GitHub: " [:a {:href "https://github.com/james-henderson"} "james-henderson"]]]]))))
 
 
