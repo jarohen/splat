@@ -5,6 +5,18 @@
 
 (enable-console-print!)
 
+(set! (.-onload js/window)
+      (fn []
+        (f/root js/document.body
+          (f/el
+            [:p "Hello world!"]))))
+
+;; ------------------------------------------------------------
+
+;; Below this line is only required for the SPLAT welcome page, feel
+;; free to just delete all of it when you want to get cracking on your
+;; own project!
+
 (defn code [s]
   (f/el
     [:strong {::f/style {:font-family "'Courier New', 'monospace'"}}
