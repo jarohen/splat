@@ -12,11 +12,12 @@
                  [hiccup "1.0.5"]
 
                  [jarohen/flow "0.2.0-beta2"]
+                 [jarohen/nomad "0.7.0"]
 
                  [org.clojure/clojurescript "0.0-2280"]
                  [org.clojure/core.async "0.1.303.0-886421-alpha"]]
 
-  :plugins [[jarohen/lein-frodo "0.3.2"]
+  :plugins [[jarohen/lein-frodo "0.4.1"]
             [jarohen/simple-brepl "0.1.1"]
             [lein-cljsbuild "1.0.3"]
             [lein-pdo "0.1.1"]
