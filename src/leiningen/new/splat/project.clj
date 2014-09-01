@@ -10,6 +10,8 @@
                  [ring/ring-core "1.2.0"]
                  [compojure "1.1.6"]
                  [hiccup "1.0.5"]
+                 [garden "1.2.1"]
+                 [ring-middleware-format "0.4.0"]
 
                  [jarohen/flow "0.2.0-beta2"]
                  [jarohen/nomad "0.7.0"]
