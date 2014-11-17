@@ -13,14 +13,14 @@
                  [garden "1.2.1"]
                  [ring-middleware-format "0.4.0"]
 
-                 [jarohen/flow "0.2.0-beta3"]
+                 [jarohen/flow "0.2.0-beta4"]
                  [jarohen/nomad "0.7.0"]
 
-                 [org.clojure/clojurescript "0.0-2280"]
-                 [org.clojure/core.async "0.1.303.0-886421-alpha"]]
+                 [org.clojure/clojurescript "0.0-2371"]
+                 [org.clojure/core.async "0.1.346.0-17112a-alpha"]]
 
   :plugins [[jarohen/lein-frodo "0.4.1"]
-            [jarohen/simple-brepl "0.1.1"]
+            [jarohen/simple-brepl "0.1.2"]
             [lein-cljsbuild "1.0.3"]
             [lein-pdo "0.1.1"]
             [com.keminglabs/cljx "0.4.0"]
