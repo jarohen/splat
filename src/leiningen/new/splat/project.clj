@@ -44,18 +44,12 @@
                        {:source-paths ["ui-src" "target/generated/cljs"]
                         :compiler {:output-to "target/resources/js/{{name}}.js"
                                    :output-dir "target/resources/js/"
-                                   :optimizations :whitespace
-                                   :pretty-print true
-
-                                   ;; uncomment for source-maps
-                                        ; :source-map "target/resources/js/{{name}}.js.map"
-                                   }}
+                                   :optimizations :none}}
 
                        :prod
                        {:source-paths ["ui-src" "target/generated/cljs"]
                         :compiler {:output-to "target/resources/js/{{name}}.js"
                                    :optimizations :advanced
-                                   :pretty-print false
                                    :externs ["externs/jquery.js"]}}}}
 
   :aliases {"dev" ["do"
