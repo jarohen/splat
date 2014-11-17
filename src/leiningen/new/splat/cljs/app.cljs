@@ -33,22 +33,22 @@
              [:h3 "Things to try:"]
                   
              [:ul
-              [:li [:p "In your Clojure REPL (in the 'user' ns), run " (code "(reload-frodo!)") " to completely reload the webapp without restarting the JVM."]]
-              [:li [:p "Connect to a CLJS bREPL by running " (code "(simple-brepl)")]]
+              [:li [:p "In your Clojure REPL (in the 'user' ns), run " [code "(reload-frodo!)"] " to completely reload the webapp without restarting the JVM."]]
+              [:li [:p "Connect to a CLJS bREPL by running " [code "(simple-brepl)"]]]
               [:li
                [:p "Once you've opened the bREPL, reload your browser to make the connection, then you can eval some CLJS."]
                [:p "I recommend:"]
                     
                [:ul
-                [:li (code "(+ 1 1)")]
-                [:li (code "(js/alert \"Hello world!\")")]
-                [:li (code "(set! (.-backgroundColor js/document.body.style) \"green\")")]]
+                [:li [code "(+ 1 1)"]]
+                [:li [code "(js/alert \"Hello world!\")"]]
+                [:li [code "(set! (.-backgroundColor js/document.body.style) \"green\")"]]]
 
-               [:p "Run " (code ":cljs/quit") " to get back to a Clojure REPL."]]
+               [:p "Run " [code ":cljs/quit"] " to get back to a Clojure REPL."]]
               [:li [:p "Start making your webapp!"]
                [:ul
-                [:li [:p "The CLJS entry point is in " (code "ui-src/{{sanitized}}/ui/app.cljs")]]
-                [:li [:p "The Clojure Ring handler is in " (code "src/{{sanitized}}/service/handler.clj")]]]]
+                [:li [:p "The CLJS entry point is in " [code "ui-src/{{sanitized}}/ui/app.cljs"]]]
+                [:li [:p "The Clojure Ring handler is in " [code "src/{{sanitized}}/service/handler.clj"]]]]]
 
               [:li [:p "Any trouble, let me know - either through GitHub or on Twitter at " [:a {:href "https://twitter.com/jarohen"} "@jarohen"]]]
 
