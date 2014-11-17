@@ -2,6 +2,7 @@
   (:require [{{name}}.service.css :as css]
             [ring.util.response :refer [response content-type]]
             [ring.middleware.format :refer [wrap-restful-format]]
+            [clojure.java.io :as io]
             [compojure.core :refer [routes context GET]]
             [compojure.route :refer [resources]]
             [compojure.handler :refer [api]]
