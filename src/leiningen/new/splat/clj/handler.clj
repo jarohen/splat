@@ -23,7 +23,7 @@
     (include-js "//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js")
     (include-css "//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css")
     
-    (if-let [cljs-base (io/resource "js/goog/base.js")]
+    (if (io/resource "js/goog/base.js")
       (list (include-js "/js/goog/base.js")
             (include-js "/js/{{name}}.js")
             [:script "goog.require('{{sanitized}}.ui.app');"])
