@@ -13,7 +13,7 @@
                  [garden "1.2.1"]
                  [ring-middleware-format "0.4.0"]
 
-                 [jarohen/flow "0.2.0-beta5"]
+                 [jarohen/flow "0.3.0-alpha1"]
                  [jarohen/nomad "0.7.0"]
 
                  [org.clojure/clojurescript "0.0-2371"]
