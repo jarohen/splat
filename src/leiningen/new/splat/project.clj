@@ -1,69 +1,62 @@
 (defproject {{name}} ""
+  :dependencies [[org.clojure/clojure "1.8.0"]
 
-  :description "FIXME: write description"
-  :url "http://example.com/FIXME"
-  :license {:name "Eclipse Public License"
-            :url "http://www.eclipse.org/legal/epl-v10.html"}
-  
-  :dependencies [[org.clojure/clojure "1.7.0-alpha4"]
+                 [org.clojure/tools.nrepl "0.2.13"]
+                 [cider/cider-nrepl "0.14.0"]
+                 [refactor-nrepl "2.3.0"]
 
-                 [ring/ring-core "1.2.0"]
-                 [compojure "1.1.6"]
+                 [com.taoensso/timbre "4.10.0"]
+
+                 [cheshire "5.7.1"]
+
+                 [aleph "0.4.3"]
+                 [ring/ring-core "1.6.1"]
+                 [ring/ring-defaults "0.3.0"]
+                 [ring-middleware-format "0.7.2"]
+                 [rm-hull/ring-gzip-middleware "0.1.7"]
+                 [bidi "2.1.1"]
                  [hiccup "1.0.5"]
-                 [garden "1.2.1"]
-                 [ring-middleware-format "0.4.0"]
 
-                 [jarohen/flow "0.3.0-alpha1"]
-                 [jarohen/nomad "0.7.0"]
+                 [jarohen/wiring "0.0.1-alpha1"]]
 
-                 [org.clojure/clojurescript "0.0-2371"]
-                 [org.clojure/core.async "0.1.346.0-17112a-alpha"]]
+  :exclusions [org.clojure/clojurescript]
 
-  :plugins [[jarohen/lein-frodo "0.4.1"]
-            [jarohen/simple-brepl "0.1.2"]
-            [lein-cljsbuild "1.0.3"]
+  :source-paths ["src/clj" "src/cljc" "src/cljs"]
+
+  :plugins [[cider/cider-nrepl "0.14.0"]
             [lein-pdo "0.1.1"]
-            [com.keminglabs/cljx "0.4.0"]
-            [lein-shell "0.4.0"]]
+            [lein-shell "0.4.1"]]
 
-  :frodo/config-resource "{{name}}-config.edn"
+  :profiles {:cljs {:dependencies [[org.clojure/clojurescript "1.9.562"]
+                                   [figwheel-sidecar "0.5.10"]
 
-  :source-paths ["src" "target/generated/clj"]
+                                   [reagent "0.7.0" :exclude [cljsjs/react]]
+                                   [cljsjs/react-dom "15.4.2-2"]
+                                   [cljsjs/react-with-addons "15.4.2-2"]
+                                   [jarohen/oak "0.0.1-20170607.122106-4"]
 
-  :resource-paths ["resources" "target/resources"]
+                                   [cljs-http "0.1.43"]]
 
-  :cljx {:builds [{:source-paths ["common-src"]
-                   :output-path "target/generated/clj"
-                   :rules :clj}
+                    :exclusions [cljsjs/react
+                                 cljsjs/react-dom
+                                 cljsjs/react-dom-router
+                                 cljsjs/react-dom-server]}
 
-                  {:source-paths ["common-src"]
-                   :output-path "target/generated/cljs"
-                   :rules :cljs}]}
+             :dev [:cljs]}
 
-  :cljsbuild {:builds {:dev
-                       {:source-paths ["ui-src" "target/generated/cljs"]
-                        :compiler {:output-to "target/resources/js/{{name}}.js"
-                                   :output-dir "target/resources/js/"
-                                   :optimizations :none}}
+  :uberjar-name "{{name}}-standalone.jar"
+  :auto-clean false
+  :filespecs [{:type :paths, :paths ["target/dist"]}]
+  :jar-exclusions [#"^public/s/static/js/deps/"]
 
-                       :prod
-                       {:source-paths ["ui-src" "target/generated/cljs"]
-                        :compiler {:output-to "target/resources/js/{{name}}.js"
-                                   :optimizations :advanced
-                                   :externs ["externs/jquery.js"]}}}}
+  :aliases {"dev-api" ["run" "-m" "{{name}}.api.main"]
+            "dev-ui" ["with-profiles" "+cljs" "run" "-m" "{{name}}.api.figwheel/start-figwheel!"]
+            "build-ui" ["with-profiles" "+cljs" "run" "-m" "{{name}}.api.figwheel/build-ui!"]
 
-  :aliases {"dev" ["do"
-                   ["shell" "mkdir" "-p"
-                    "target/generated/clj"
-                    "target/generated/cljs"
-                    "target/resources"]
-                   ["cljx" "once"]
-                   ["pdo"
-                    ["cljx" "auto"]
-                    ["cljsbuild" "auto" "dev"]
-                    "frodo"]]
-            
-            "start" ["do"
-                     ["cljx" "once"]
-                     ["cljsbuild" "once" "prod"]
-                     ["trampoline" "frodo"]]})
+            ;; npm install -g less less-plugin-clean-css
+            "build-less" ["shell" "lessc" "--clean-css" "dev-resources/public/s/static/less/main.less" "target/dist/public/s/static/css/site.css"]
+
+            "build" ["do"
+                     ["clean"]
+                     ["pdo" "compile," "build-ui," "build-less"]
+                     ["uberjar"]]})

@@ -1,3 +1,0 @@
-{:frodo/config {:web {:port 3000
-                      :app {{name}}.service.handler/app}
-                :nrepl {:port 7888}}}
