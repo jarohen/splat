@@ -17,7 +17,7 @@
                  [bidi "2.1.1"]
                  [hiccup "1.0.5"]
 
-                 [jarohen/wiring "0.0.1-alpha1"]]
+                 [jarohen/wiring "0.0.1-alpha2"]]
 
   :exclusions [org.clojure/clojurescript]
 
@@ -51,6 +51,7 @@
 
   :aliases {"dev-api" ["run" "-m" "{{name}}.api.main"]
             "dev-ui" ["with-profiles" "+cljs" "run" "-m" "{{name}}.api.figwheel/start-figwheel!"]
+
             "build-ui" ["with-profiles" "+cljs" "run" "-m" "{{name}}.api.figwheel/build-ui!"]
 
             ;; npm install -g less less-plugin-clean-css
