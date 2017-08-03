@@ -15,6 +15,7 @@
     (->files data
              ["project.clj" (render "project.clj" data)]
              [".gitignore" (render "gitignore" data)]
+             ["secrets.edn" (pr-str {})]
              "resources"
 
              ["src/clj/{{sanitized}}/api/main.clj" (render "main.clj" data)]
