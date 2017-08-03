@@ -29,4 +29,4 @@
              ["dev-resources/public/static/less/main.less" (render "main.less" data)]))
 
   (println "Created!")
-  (println "To start the application, run `lein dev`, and then go to http://localhost:3000"))
+  (println "To start the application, run `lein dev-api` and `lein dev-ui` (in separate terminals), and then go to http://localhost:3000"))

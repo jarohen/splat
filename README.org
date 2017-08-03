@@ -16,7 +16,7 @@ Most of these can be easily swapped out if required.
   lein new splat {{project-name}}
 #+END_SRC
 
-To run the project, run =lein dev=.
+To run the project, run =lein dev-api= and =lein dev-ui= (in separate terminals).
 
 ** License
 
