@@ -18,6 +18,9 @@
              ["secrets.edn" (pr-str {})]
              "resources"
 
+             ["bin/build.sh" (render "build.sh" data) :executable true]
+             ["bin/build-base.sh" (render "build-base.sh" data) :executable true]
+
              ["Dockerfile" (render "Dockerfile" data)]
              ["Dockerfile.base" (render "Dockerfile.base" data)]
              [".dockerignore" (render "dockerignore" data)]
