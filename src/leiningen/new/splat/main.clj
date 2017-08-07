@@ -16,7 +16,8 @@
    :wiring/secret-keys (edn/read-string (slurp (io/file "secrets.edn")))})
 
 (defn -main [& args]
-  (nrepl/start-server :port 7888
+  (nrepl/start-server :bind "127.0.0.1"
+                      :port 7888
                       :handler (-> cider/cider-nrepl-handler
                                    wrap-refactor))
 
