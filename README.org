@@ -1,0 +1,25 @@
+* Single Page Light-weight Application Template (SPLAT)
+
+An opinionated Leiningen template to create ClojureScript single page web applications.
+
+Libraries/frameworks used:
+- [[https://github.com/jarohen/wiring][Wiring]] - a library to configure and wire-up component-based applications
+- [[https://github.com/juxt/bidi][Bidi]] - bidirectional URI routing
+- [[https://reagent-project.github.io/][Reagent]] - minimalistic React for ClojureScript
+- [[https://github.com/jarohen/oak][Oak]] - a library to structure single-page webapps - taking inspiration from the Elm Architecture
+
+Most of these can be easily swapped out if required.
+
+** Usage
+
+#+BEGIN_SRC shell
+  lein new splat {{project-name}}
+#+END_SRC
+
+To run the project, run =lein dev-api= and =lein dev-ui= (in separate terminals).
+
+** License
+
+Copyright © 2017 James Henderson
+
+Distributed under the Eclipse Public License, the same as Clojure.
