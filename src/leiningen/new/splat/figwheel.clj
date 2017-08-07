@@ -9,9 +9,9 @@
   (fig/start-figwheel! {:all-builds [{:id :dev
                                       :source-paths source-paths
                                       :compiler {:main '{{name}}.ui.main
-                                                 :output-dir "target/dev/public/s/static/js/deps"
-                                                 :output-to "target/dev/public/s/static/js/app.js"
-                                                 :asset-path "/s/static/js/deps"}
+                                                 :output-dir "target/dev/public/static/js/deps"
+                                                 :output-to "target/dev/public/static/js/app.js"
+                                                 :asset-path "/static/js/deps"}
                                       :figwheel {:on-jsload 'reagent.core/force-update-all}}]
                         :build-ids [:dev]
                         :figwheel-options {:server-logfile false}}))
@@ -20,11 +20,11 @@
 (defn build-ui! []
   (cljs/build (apply cljs/inputs source-paths)
               {:infer-externs true
-               :output-dir "target/dist/public/s/static/js/deps"
+               :output-dir "target/dist/public/static/js/deps"
                :optimizations :advanced
                :recompile-dependents false
                :parallel-build true
-               :output-to "target/dist/public/s/static/js/app.js"
+               :output-to "target/dist/public/static/js/app.js"
                :output-wrapper true
                :pseudo-names false
                :compiler-stats true

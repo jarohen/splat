@@ -16,12 +16,12 @@
                [:meta#config {:value (pr-str {})}]
                (include-css "https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css")
                (if-not dev-mode?
-                 (include-css "/s/static/css/site.css")
+                 (include-css "/static/css/site.css")
 
                  (list
                   [:link {:rel "stylesheet/less"
                           :type "text/css"
-                          :href "/s/static/less/main.less"
+                          :href "/static/less/main.less"
                           :data-env "development"
                           :data-poll 1000}]
 
@@ -30,7 +30,7 @@
 
               [:body
                [:div#app]
-               (include-js "/s/static/js/app.js")
+               (include-js "/static/js/app.js")
                [:script "{{sanitized}}.ui.main.main()"]]))
 
       (content-type "text/html")

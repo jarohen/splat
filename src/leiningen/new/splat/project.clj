@@ -47,7 +47,7 @@
   :uberjar-name "{{name}}-standalone.jar"
   :auto-clean false
   :filespecs [{:type :paths, :paths ["target/dist"]}]
-  :jar-exclusions [#"^public/s/static/js/deps/"]
+  :jar-exclusions [#"^public/static/js/deps/"]
 
   :aliases {"dev-api" ["run" "-m" "{{name}}.api.main"]
             "dev-ui" ["with-profiles" "+cljs" "run" "-m" "{{name}}.api.figwheel/start-figwheel!"]
@@ -55,7 +55,7 @@
             "build-ui" ["with-profiles" "+cljs" "run" "-m" "{{name}}.api.figwheel/build-ui!"]
 
             ;; npm install -g less less-plugin-clean-css
-            "build-less" ["shell" "lessc" "--clean-css" "dev-resources/public/s/static/less/main.less" "target/dist/public/s/static/css/site.css"]
+            "build-less" ["shell" "lessc" "--clean-css" "dev-resources/public/static/less/main.less" "target/dist/public/static/css/site.css"]
 
             "build" ["do"
                      ["clean"]
