@@ -11,12 +11,16 @@
   {:status (fn [req]
              (response "ok"))})
 
-(defn server [config]
-  (log/info "Starting server")
-  (let [server (http/start-server (some-fn (br/make-handler api-routes (handlers config))
-                                           (page/ui-handler config))
-                                  {:port 3000})]
-    (w/->Component server
-                   (fn []
-                     (log/info "Stopping server")
-                     (.close server)))))
+(def server
+  {:wiring/component (fn [config]
+                       (log/info "Starting server")
+                       (let [server (http/start-server (some-fn (br/make-handler api-routes (handlers config))
+                                                                (page/ui-handler config))
+                                                       {:port 3000})]
+                         (w/->Component server
+                                        (fn []
+                                          (log/info "Stopping server")
+                                          (.close server)))))
+
+   :dev-mode? true
+   :wiring/switches {:built {:dev-mode? false}}})

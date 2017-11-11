@@ -22,11 +22,9 @@
                   [:link {:rel "stylesheet/less"
                           :type "text/css"
                           :href "/static/less/main.less"
-                          :data-env "development"
-                          :data-poll 1000}]
+                          :data-env "development"}]
 
-                  (include-js "https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js")
-                  [:script "less.watch();"]))]
+                  (include-js "https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js")))]
 
               [:body
                [:div#app]
@@ -40,6 +38,7 @@
   (-> (br/make-handler app-routes (constantly #(page % config)))
       (wrap-defaults (-> site-defaults
                          (assoc-in [:responses :content-types] {:mime-types {"less" "text/css"}})
+                         (assoc-in [:static :resources] "public")
                          (cond-> dev-mode? (assoc-in [:static :files] [(doto (io/file "target/dev/public")
                                                                          (.mkdirs))]))))
       (wrap-gzip)))

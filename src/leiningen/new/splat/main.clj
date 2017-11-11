@@ -8,12 +8,10 @@
             [taoensso.timbre :as log]))
 
 (w/defsystem api
-  ;; TODO move this to thing.api.server ns, and make wiring look it up there
-  {:web-server {:wiring/component '{{name}}.api.server/server
-                :dev-mode? true
-                :wiring/switches {:built {:dev-mode? false}}}
+  {:web-server '{{name}}.api.server/server
 
-   :wiring/secret-keys (edn/read-string (slurp (io/file "secrets.edn")))})
+   :wiring/secret-keys (edn/read-string (slurp (or (System/getenv "WIRING_SECRETS")
+                                                   (io/file "secrets.edn"))))})
 
 (defn -main [& args]
   (nrepl/start-server :bind "127.0.0.1"
