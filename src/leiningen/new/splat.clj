@@ -25,6 +25,7 @@
              ["Dockerfile.base" (render "Dockerfile.base" data)]
              [".dockerignore" (render "dockerignore" data)]
 
+             ["src/clj/{{sanitized}}/user.clj" (render "user.clj" data)]
              ["src/clj/{{sanitized}}/api/main.clj" (render "main.clj" data)]
              ["src/clj/{{sanitized}}/api/figwheel.clj" (render "figwheel.clj" data)]
              ["src/clj/{{sanitized}}/api/page.clj" (render "page.clj" data)]
